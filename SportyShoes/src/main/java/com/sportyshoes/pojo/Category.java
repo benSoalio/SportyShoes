@@ -27,7 +27,7 @@ public class Category {
 		this.id = id;
 	}
 	
-	@OneToMany(mappedBy="category", cascade= { CascadeType.ALL})
+	@OneToMany(mappedBy="category")
 	public List<Product> getProducts() {
 		return products;
 	}

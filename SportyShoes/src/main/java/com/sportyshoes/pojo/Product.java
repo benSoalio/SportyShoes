@@ -38,7 +38,7 @@ public class Product {
 		this.price = price;
 	}
 	
-	@ManyToOne(cascade = CascadeType.ALL )
+	@ManyToOne()
 	public Category getCategory() {
 		return category;
 	}
