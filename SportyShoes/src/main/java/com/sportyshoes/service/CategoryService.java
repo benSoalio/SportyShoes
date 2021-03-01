@@ -40,5 +40,10 @@ public class CategoryService {
 		 return category;
 	}
 	
+	public Category findByName(String name) {
+		return categoryRepository.findByName(name);
+		
+	}
+	
 
 }

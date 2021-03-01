@@ -11,8 +11,22 @@ crossorigin="anonymous">
 </script>
 </head>
 <body>
-	<h1>Detail Category</h1>
-	
-	<div th:text="${category.name}"> Category name</div>
+	<div class="container">
+		<h1>Category detail</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">NAME</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row" th:text="${category.id}">#</th>
+					<td th:text="${category.name}">Football</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>

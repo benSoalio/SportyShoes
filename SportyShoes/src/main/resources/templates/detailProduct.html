@@ -2,7 +2,7 @@
 <html xmlns:th="http://thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>List of all categories</title>
+<title>Product detail</title>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
@@ -11,21 +11,24 @@ crossorigin="anonymous">
 </script>
 </head>
 <body>
+
 	<div class="container">
-		<h1>List of the categories</h1>
+		<h1>Product detail</h1>
 		<table class="table">
 			<thead>
 				<tr>
 					<th scope="col">ID</th>
 					<th scope="col">NAME</th>
-					<th scope="col">Action</th>
+					<th scope="col">Category</th>
+					<th scope="col">Price</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="category : ${categories}">
-					<th scope="row" th:text="${category.id}">#</th>
-					<td th:text="${category.name}">Football</td>
-					<td><a href="/category/categoryId" th:href="@{/category/{categoryId}(categoryId=${category.id})}">Details</a></td>
+				<tr>
+					<th scope="row" th:text="${product.id}">#</th>
+					<td th:text="${product.name}">Football</td>
+					<td th:text="${product.category.name}">Football</td>
+					<td th:text="${product.price}">1000</td>
 				</tr>
 			</tbody>
 		</table>
