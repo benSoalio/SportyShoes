@@ -7,7 +7,7 @@ import javax.persistence.ManyToOne;
 
 
 @Embeddable
-public class PurchaseId implements Serializable {
+public class PurchaseProductPk implements Serializable {
 	
 	/**
 	 * 
@@ -15,23 +15,25 @@ public class PurchaseId implements Serializable {
 	private static final long serialVersionUID = 7532305534119692452L;
 
 	
-	private User user;
+	private Purchase purchase;
 	
 	
 	private Product product;
 	
 	@ManyToOne
-	public User getUser() {
-		return user;
+	public Purchase getPurchase() {
+		return purchase;
 	}
-	public void setUser(User user) {
-		this.user = user;
+	public void setPurchase(Purchase purchase) {
+		this.purchase = purchase;
 	}
+	
 	
 	@ManyToOne
 	public Product getProduct() {
 		return product;
 	}
+	
 	public void setProduct(Product product) {
 		this.product = product;
 	}

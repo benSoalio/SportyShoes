@@ -30,7 +30,11 @@ crossorigin="anonymous">
 					<td th:text="${product.name}" >Mercury</td>
 					<td th:text="${product.category.name}">Football</td>
 					<td th:text="${product.price}">1000</td>
-					<td><a href="/product/productId" th:href="@{/product/{productId}(productId=${product.id})}">Details</a></td>
+					<td>
+						<a href="/product/productId" th:href="@{/product/{productId}(productId=${product.id})}">Details</a>
+						<a  th:href="@{/purchaseProduct/add/{productId}(productId=${product.id})}">Buy now</a>
+					
+					</td>
 				</tr>
 			</tbody>
 		</table>

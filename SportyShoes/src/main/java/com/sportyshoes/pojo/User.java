@@ -1,6 +1,8 @@
 package com.sportyshoes.pojo;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -23,6 +25,7 @@ public class User {
 	private String username;
 	private String email;
 	private String password;
+	private List<Purchase> purchases =  new ArrayList<>();
 	private Set<Authority> authorities = new HashSet<>();
 	
 	
@@ -66,6 +69,16 @@ public class User {
 
 	public void setAuthorities(Set<Authority> authorities) {
 		this.authorities = authorities;
+	}
+	
+	
+	@OneToMany(mappedBy="user")
+	public List<Purchase> getPurchases() {
+		return purchases;
+	}
+
+	public void setPurchases(List<Purchase> purchases) {
+		this.purchases = purchases;
 	}
 
 	@Override
