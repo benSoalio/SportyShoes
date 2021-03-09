@@ -34,13 +34,19 @@ public class PurchaseProduct {
 	}
 
 	public PurchaseProduct(Purchase purchase, Product product, Integer quantity) {
-		super();
-		this.pk.setPurchase(purchase); 
-		this.pk.setProduct(product);
+
+		pk = new PurchaseProductPk();
+		pk.setPurchase(purchase);
+		pk.setProduct(product);
 		this.quantity = quantity;
 	}
-	
-	
+
+	public PurchaseProduct( Product product, Integer quantity) {
+		
+		pk = new PurchaseProductPk();
+		pk.setProduct(product);
+		this.quantity = quantity;
+	}
 
 	public PurchaseProduct() {
 		super();

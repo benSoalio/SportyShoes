@@ -39,11 +39,11 @@ public class PurchaseProductController {
 		public String addPurchaseProduct(@PathVariable Long productId, ModelMap model, HttpSession session) {
 			
 			Product product = productService.getProductById(productId);
-			Purchase purchase = new Purchase();
+			
 			
 			if (session.getAttribute("purchaseProducts") == null) {
 				List <PurchaseProduct> purchaseProducts = new ArrayList<PurchaseProduct>();
-				purchaseProducts.add(new PurchaseProduct(purchase ,product, 1));
+				purchaseProducts.add(new PurchaseProduct(product, 1));
 				session.setAttribute("purchaseProducts", purchaseProducts);
 			} else {
 				
