@@ -1,10 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>All products </title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" 
+crossorigin="anonymous">
+</script>
 </head>
 <body>
- <h1>Hello</h1>
+
+	<div class="container">
+		<h1>Shopping Cart</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">NAME</th>
+					<th scope="col">Price</th>
+					<th scope="col">Quantity</th>
+					<th scope="col">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="purchaseProduct : ${session.purchaseProducts}">
+					<th scope="row" th:text="${purchaseProduct.product.id}">#</th>
+					<td th:text="${purchaseProduct.product.name}" >Mercury</td>
+					<td th:text="${purchaseProduct.product.price}">1000</td>
+					<td th:text="${purchaseProduct.quantity}">Football</td>
+					<td>
+						<a  th:href="@{/purchaseProduct/add/{productId}(productId=${purchaseProduct.product.id})}">Add Product</a>
+						<a th:href="@{/purchaseProduct/remove/{productId}(productId=${purchaseProduct.product.id})}">Remove Product</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			<a href="/products">Continue Shopping</a><br>
+		</p>
+	</div>
+
 </body>
 </html>
