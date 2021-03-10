@@ -5,6 +5,8 @@ import java.io.Serializable;
 import javax.persistence.Embeddable;
 import javax.persistence.ManyToOne;
 
+import net.bytebuddy.implementation.bind.annotation.Default;
+
 
 @Embeddable
 public class PurchaseProductPk implements Serializable {

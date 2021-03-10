@@ -39,5 +39,10 @@ public class UserService {
 		 userRepo.findAll().forEach(users::add);
 		 return users;
 	}
+	
+	public User findByUsername(String username) {
+		User user = userRepo.findByUsername(username);
+		return user;
+	}
 
 }

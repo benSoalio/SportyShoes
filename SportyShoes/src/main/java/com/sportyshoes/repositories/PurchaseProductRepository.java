@@ -6,5 +6,5 @@ import com.sportyshoes.pojo.PurchaseProduct;
 import com.sportyshoes.pojo.PurchaseProductPk;
 
 public interface PurchaseProductRepository extends CrudRepository<PurchaseProduct, PurchaseProductPk> {
-
+	
 }
